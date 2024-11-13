@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Weather App</h1>
-        <div class="search-box">
-            <input type="text" id="cityInput" placeholder="Enter city name">
-            <button onclick="getWeather()">Get Weather</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advanced Weather App</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <!-- Icons -->
+    </head>
+    <body>
+        <div class="container">
+            <h1>Advanced Weather App</h1>
+
+            <!-- Search and Current Location -->
+            <div class="search-location">
+                <input type="text" id="cityInput" placeholder="Enter city name">
+                <button onclick="getWeather()">Get Weather</button>
+                <button onclick="getWeatherByLocation()">Get Current Location
+                    Weather</button>
+            </div>
+
+            <!-- Temperature Unit Toggle -->
+            <div class="unit-toggle">
+                <button onclick="toggleUnit('metric')">°C</button>
+                <button onclick="toggleUnit('imperial')">°F</button>
+            </div>
+
+            <!-- Current Weather Display -->
+            <div id="weatherResult" class="weather-result hidden">
+                <div class="current-weather">
+                    <h2 id="cityName">City Name</h2>
+                    <p id="temperature"></p>
+                    <p id="description"></p>
+                    <p id="humidity"></p>
+                    <p id="windSpeed"></p>
+                    <p id="date"></p>
+                </div>
+
+                <!-- 5-Day Forecast -->
+                <div id="forecast" class="forecast"></div>
+            </div>
+
+            <!-- Loader -->
+            <div id="loader" class="loader hidden">Loading...</div>
         </div>
-        <div id="weatherResult" class="weather-result hidden">
-            <h2 id="cityName">City Name</h2>
-            <p id="temperature"></p>
-            <p id="description"></p>
-            <p id="humidity"></p>
-            <p id="windSpeed"></p>
-        </div>
-    </div>
-    <script src="app.js"></script>
-</body>
+        <script src="app.js"></script>
+    </body>
 </html>
